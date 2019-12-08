@@ -1,0 +1,42 @@
+#include<iostream>
+#include<cstring>
+#include<cmath>
+
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+   int L=s.length();
+   
+   int k=0;
+   
+  
+   double x=sqrt(L);
+   int i=floor(x);
+   int j=ceil(x);
+   char r[i][j];
+   int p,q,t;
+   for(q=0;q<i;q++)
+   {
+       for(t=0;t<j;t++)
+       {
+           r[q][t]=s[k];
+           k++;
+       }
+   }
+   
+   
+   for(t=0;t<j;t++)
+   
+   {
+       for(q=0;q<i;q++)
+       {
+           cout<<r[q][t]<<" ";
+       }
+       
+   }
+   return 0;
+   
+   
+}
