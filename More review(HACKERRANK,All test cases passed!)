@@ -1,0 +1,31 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+    int T,i;
+    string S;
+    cin>>T;
+    while(T--)
+    {
+        cin>>S;
+        for(i=0;i<S.length();i++)
+        {
+            if(i==0||i%2==0)
+            {
+                cout<<S[i];
+            }
+            
+        }
+        cout<<" ";
+        for(i=0;i<S.length();i++)
+        {
+            if(i%2!=0)
+            {
+                cout<<S[i];
+            }
+        }
+        
+    }
+    return 0;
+}
