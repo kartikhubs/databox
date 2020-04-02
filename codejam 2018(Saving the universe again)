@@ -1,0 +1,36 @@
+t=int(input(""))
+r=1
+while r<=t:
+    n,s=input("").split()
+    a=list(s)
+    b=[]
+    count=0
+    ans=0
+    if "S" not in a:
+        ans="0"
+        print("Case #{}: {}".format(r,ans))
+    elif "C" not in a:
+        ans="IMPOSSIBLE"
+        print("Case #{}: {}".format(r,ans))
+    else:
+         for x in range(0,len(a)):
+            if a[x]=="S":
+              a[x]="C"
+              b.append(a[x])
+            elif a[x]=="C":
+               a[x]="S"
+               b.append(a[x])
+         for i in range(0,len(b)):
+             for j in range(i+1,len(b)):
+                if b[i]=="C" and b[j]=="S":
+                   b[i],b[j]=b[j],b[i]
+     
+         for i in range(0,len(b)):
+            if b[i]=="C":
+              count=count+1
+         ans=2**count-int(n)
+         print("Case #{}: {}".format(r,ans))
+    r=r+1
+    
+    
+    
