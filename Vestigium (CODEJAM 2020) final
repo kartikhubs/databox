@@ -1,0 +1,58 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int T, n,a[100][100],i,j,count,count1,h,y,trace;
+    cin>>T;
+    for(int z=1;z<=T;z++){
+        count=0;
+        count1=0;
+        trace=0;
+    
+    cin>>n;
+    for(i=0;i<n;i++){
+        for(j=0;j<n;j++){
+            cin>>a[i][j];
+            if(i==j){
+                trace+=a[i][j];
+            }
+        }
+    }
+    set<int>s;
+    
+    set<int>s1;
+    
+    for(i=0;i<n;i++){
+        s.clear();
+        int temp=i;
+        for(j=0;j<n;j++){
+            s.insert(a[temp][j]);
+            
+        }
+        if(s.size()<n){
+            count++;
+        }
+        
+    }
+    for(h=0;h<n;h++){
+        s1.clear();
+        int temp1=h;
+        
+        for(y=0;y<n;y++){
+            
+            s1.insert(a[y][temp1]);
+            
+        }
+        if(s1.size()<n){
+            count1++;
+        }
+        
+    }
+    cout<<"Case"<<" "<<"#"<<z<<":"<<" "<<trace<<" "<<count<<" "<<count1<<endl;
+   
+    
+    }
+    return 0;
+}
