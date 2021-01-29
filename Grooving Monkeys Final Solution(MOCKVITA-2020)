@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    int N,a[100],i,j,k=0,p,count=0;
+    cin>>N;
+    for(i=0;i<N;i++){
+        cin>>a[i];
+    }
+    char monk[26];
+    for(j=97;j<97+N;j++){
+        monk[k]=j;
+        k++;
+    }
+    char ref[26];
+    memcpy(ref,monk,k);
+    char b[N];
+    memset(b,' ',sizeof(b));
+    restart:
+    for(i=0;i<N;i++){
+        for(p=0;p<k;p++){
+            if(i==p)
+              {
+
+            b[a[i]-1]=monk[p];
+        }}
+    }
+    memset(monk,' ',sizeof(monk));
+    memcpy(monk,b,N);
+    if(memcmp(ref,monk,N)!=0){
+        count++;
+        goto restart;
+    }
+    
+    
+    cout<<count+1;
+    return 0;
+}
+
