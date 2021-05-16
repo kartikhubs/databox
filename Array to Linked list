@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+class A{
+    public:
+    int val;
+    A* link;
+};
+
+void userinput(int arr[],A**head,int n){
+      for(int c=0;c<n;c++){
+          A* newNode=new A();
+          newNode->val=arr[c];
+          newNode->link=(*head);
+          (*head)=newNode;
+
+      }
+      
+}
+
+void print(A*head){
+    while(head){
+        cout<<"Linked list element is"<<" "<<head->val<<'\n';
+        head=head->link;
+    }
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    int n,a[100],i,j;
+    cout<<"Enter number of elements to be inserted"<<'\n';
+    cin>>n;
+    cout<<"And they are"<<'\n';
+    for(i=0;i<n;i++){
+        cin>>a[i];
+    }
+    A*head=NULL;
+
+
+
+    userinput(a,&head,n);
+    print(head);
+    return 0;
+}
+
+
+
+    
+
