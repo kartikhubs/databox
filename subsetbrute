@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+ 
+void subset(int,int,int []);
+void subset(int x,int size,int *arr){
+    int b[size]={0},k=0,p,i;
+    while(x!=0){
+        int rem=x%2;
+        b[k]=rem;
+        k++;
+        x/=2;
+    }
+    reverse(b,b+size);
+    for(p=0;p<size;p++){
+        if(b[p]==1){
+            cout<<arr[p]<<" ";
+ 
+        }
+    }
+ 
+ 
+ 
+}
+ 
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    int a[]={1,2,3,4,5,10,11,12};
+    int size=sizeof(a)/sizeof(a[0]);
+    for(int i=0;i<pow(2,size);i++){
+        subset(i,size,a);
+        cout<<'\n';
+    }
+ 
+    return 0;
+}
